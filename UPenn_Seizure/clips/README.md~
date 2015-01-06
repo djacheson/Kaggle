@@ -1,0 +1,5 @@
+This directory contains subdirectories for all Dogs and Patients.
+
+To process data from the beginning, raw matlab (.mat) files for each clip would be located in each directory.
+
+Currently, the directories included the processed data (i.e., derived features) that were used to train various models.
