@@ -14,7 +14,8 @@ This repo contains files for my solution to the [Second Seizure Detection Challe
 ###The challenges:
     1. Feature engineering:  Generating an appropriate feature space to differentiate seizure from non-seizure and early vs. late seizures
     2. Severe class imbalance: there are very few clips preceding seizures
-    3. Data size - relative to the first Seizure Detection Challenge, the recorded data is much larger - 10 minutes vs 1 minute. 
+    3. Data size - relative to the first [Seizure Detection Challenge](https://www.kaggle.com/c/seizure-detection)
+        Here, the recorded data is 10 minutes vs 1 minute. 
 
 ---
 
@@ -34,5 +35,5 @@ This will create the feature space that is then used by various models located i
 
 __NOTE:__
 
-    1. Raw data isn't included here, not is processed data due to size limitations
-    2. As with all Kaggle competitions, many more models were run than are included in this repo using minor variations of the models located in _model_code_
+    1. Raw data isn't included here, nor is processed data due to size limitations
+    2. As with all Kaggle competitions, many more models were run than are included in this repo using minor variations of the models located in _ModelCode_
