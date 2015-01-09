@@ -30,9 +30,9 @@ createFilesBatch.R (which calls on createFiles_oneDir.X.r files)
 
 ```
 
-This will create the feature space that is then used by various models located in the _ModelCode_ directory, with predictions in _ModelPredictions_ and saved models in _ModelSave_
+This will create the feature space that is then used by various models located in the _model_code_ directory, with predictions and models saved in _model_save_
 
 __NOTE:__
 
-    1. Raw data isn't included here, not is processed data due to size limitations
+    1. Raw data isn't included here, but processe / derived data is.
     2. As with all Kaggle competitions, many more models were run than are included in this repo using minor variations of the models located in _model_code_
