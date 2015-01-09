@@ -112,8 +112,10 @@ extremeVals <- function(data,probs=c(0.05,0.95)) {
   return(as.numeric(abs(ends[1]-ends[2])))
 }
 
-canCor <- function(data,lag) {
-  #function to calculate the canonical correlation of a signal
+autoCor <- function(data,lag) {
+  #function to calculate the autoorrelation of a signal 
+  #  (i.e., correlation of signal with a lagged version of itself)
+  
   # INPUT:
   #   data : a vector of voltage changes
   #   lag : number of data points to correlate signal with
@@ -122,12 +124,12 @@ canCor <- function(data,lag) {
   #  correlation of signal with lagged version of itself
 
   
-  canCor <- cor(data[(lag+1):length(data)],data[1:(length(data)-lag)])
-  canCor
+  autoCor <- cor(data[(lag+1):length(data)],data[1:(length(data)-lag)])
+  autoCor
 }
 
-canCorVar <- function(data,maxLag) {
-  #function to calculate the variance in canonical correlation of a signal across a range of lags
+autoCorVar <- function(data,maxLag) {
+  #function to calculate the variance in autocorrelation of a signal across a range of lags
   #INPUT:
   #  data :  a vector of voltage changes
   #  maxLag : the maximum lag (in sampling points) over which the canonical correlation is calculated
@@ -138,14 +140,14 @@ canCorVar <- function(data,maxLag) {
   #NOTE: This didn't produce a useful set of features for this data
   
   #Create a list of canonical correlations starting at lag 1 to lag maxLag by steps of 2
-  canCorList <- list()
-  canCorList <- lapply(seq(1,maxLag,2), function(x) canCor(data,x))
-  canCorVar <- var(unlist(canCorList))
-  canCorVar
+  autoCorList <- list()
+  autoCorList <- lapply(seq(1,maxLag,2), function(x) autoCor(data,x))
+  autoCorVar <- var(unlist(autoCorList))
+  autoCorVar
 }
 
-canCorMean <- function(data,maxLag) {
-  #function to calculate the mean canonical correlation of a signal across a range of lags
+autoCorMean <- function(data,maxLag) {
+  #function to calculate the mean autocorrelation of a signal across a range of lags
   #INPUT:
   #  data :  a vector of voltage changes
   #  maxLag : the maximum lag (in sampling points) over which the canonical correlation is calculated
@@ -155,10 +157,10 @@ canCorMean <- function(data,maxLag) {
   
   #NOTE: This didn't produce a useful set of features for this data
   
-  canCorList <- list()
-  canCorList <- lapply(seq(1,maxLag,2), function(x) canCor(data,x))
-  canCorMean<- mean(unlist(canCorList))
-  canCorMean
+  autoCorList <- list()
+  autoCorList <- lapply(seq(1,maxLag,2), function(x) autoCor(data,x))
+  autoCorMean<- mean(unlist(autoCorList))
+  autoCorMean
 }
 
 
