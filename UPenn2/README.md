@@ -5,16 +5,18 @@ This repo contains files for my solution to the [Second Seizure Detection Challe
 
 
 ###The competition: Generate a model to predict
-    1. Ictal / Interictal : is a clip 10 minutes before a seizure or not?
+    1. Pre-Ictal / Interictal : is a clip 10 minutes before a seizure or not?
     
 ###The data:
     -Direct EEG brain recordings from Dogs and Humans suffering from epilepsy.
     -Thus, a very high-dimensional, multivariate time-series 
 
 ###The challenges:
-    1. Feature engineering:  Generating an appropriate feature space to differentiate seizure from non-seizure and early vs. late seizures
-    2. Severe class imbalance: there are very few clips preceding seizures
-    3. Data size - relative to the first Seizure Detection Challenge -
+    1. Feature engineering:  Generating an appropriate feature space to differentiate pre-ictal (pre-seizure) from interictal
+    2. Dimensionality reduction - many more features were made relative to 
+       the first Seizure Detection Challenge
+    3. Severe class imbalance: there are very few clips preceding seizures
+    4. Data size - relative to the first Seizure Detection Challenge -
         Here, the recorded data is 10 minutes vs 1 minute. 
 
 ---
