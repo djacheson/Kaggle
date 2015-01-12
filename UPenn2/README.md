@@ -37,5 +37,5 @@ This will create the feature space that is then used by various models located i
 
 __NOTE:__
 
-    1. Raw data isn't included here, nor is processed data due to size limitations
+    1. Raw data isn't included here, and only some processed data due to size limitations
     2. As with all Kaggle competitions, many more models were run than are included in this repo using minor variations of the models located in _ModelCode_
